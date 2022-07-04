@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { PolicyService } from './policy.service';
 
 @Controller('policy')
-export class PolicyController {}
+export class PolicyController {
+    constructor(private policyService:PolicyService){}
+    @Get()
+    getPolicyList()
+    {
+        return this.policyService.getPolicy()
+    }
+}
