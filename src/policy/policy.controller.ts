@@ -9,4 +9,10 @@ export class PolicyController {
     {
         return this.policyService.getPolicy()
     }
+    @Get("/grouped")
+    getPolicyGroupList()
+    {
+        return this.policyService.getGroupPolicy()
+    }
+    
 }
